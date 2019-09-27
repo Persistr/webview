@@ -10,7 +10,7 @@ $(document).ready(function() {
         function run(){
             $("#text").html(font.substring(0,cont++));
         }
-        setInterval(run, 1000);
+        setInterval(run, 150);
     })
     
 });
