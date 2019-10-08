@@ -62,7 +62,7 @@ $(document).ready(function() {
                         myImage.setAttribute("src", res.base64img);
                         myParent.appendChild(myImage);
                         myParent.appendChild(brDiv);
-                        myParent.appendChild(infoText);
+                        //myParent.appendChild(infoText);
                         myParent.appendChild(brDiv);
                     }).catch(err => {
                         console.log(err);
