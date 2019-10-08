@@ -35,10 +35,14 @@ $(document).ready(function() {
             query.select("objectId");
             query.find().then(res => {
                 for(var i=0;i<res.length;i++) {
-                    const inner = Bmob.Query('tableName');
+                    const inner = Bmob.Query('images');
                     inner.get(res[i].objectId).then(res => {
                         console.log(res);
-                        showImage(res.base64img);
+                        var myParent = document.getElementById("list"); 
+                        var myImage = document.createElement("img");
+                        myImage.setAttribute("src", res.base64img);
+                        myParent.appendChild(myImage);
+                        myImage.style.marginLeft = "160px";
                     }).catch(err => {
                         console.log(err);
                     })
