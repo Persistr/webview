@@ -18,8 +18,8 @@ $(document).ready(function() {
                 image.onload = function() {
                     let canvas = document.createElement('canvas'), 
                     context = canvas.getContext('2d'),
-                    imageWidth = image.width / 4,    //压缩后图片的大小
-                    imageHeight = image.height / 4,
+                    imageWidth = image.width / 3,    //压缩后图片的大小
+                    imageHeight = image.height / 3,
                     data = ''
 
                     canvas.width = imageWidth
@@ -59,7 +59,7 @@ $(document).ready(function() {
                         var myImage = document.createElement("img");
                         myImage.setAttribute("src", res.base64img);
                         myParent.appendChild(myImage);
-                        myImage.style.marginLeft = "160px";
+                        myImage.style.marginLeft = "50px";
                     }).catch(err => {
                         console.log(err);
                     })
