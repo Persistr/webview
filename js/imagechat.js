@@ -11,29 +11,41 @@ $(document).ready(function() {
             var file = fileObj.files[0];
             var reader = new FileReader();
             reader.readAsDataURL(file);
+            //save base64 code 
             reader.onload = function (e) {
                 var imgResult = e.target.result;
                 saveImage(imgResult);
-                
-                var imgObj = document.getElementById(imgid);
-                if (typeof (imgObj) != "undefined") {
-                    imgObj.setAttribute("src", imgResult);
-                }
-                var fileValObj = document.getElementById(fileValId);
-                if (typeof (fileValObj) != "undefined") {
-                    fileValObj.setAttribute("value", imgResult);
-                }
             };
         };
 
         function saveImage(base64img) {
-            const query = Bmob.Query('tableName');
+            const query = Bmob.Query('images');
             query.set("base64img", base64img)
             query.save().then(res => {
-                console.log(res)
+                alert("success");
+                console.log(res);
             }).catch(err => {
-                console.log(err)
+                alert("err");
+                console.log(err);
             })
+        }
+
+        function downlaodImages() {
+            const query = Bmob.Query("images");
+            query.find().then(res => {
+                console.log(res)
+            });
+        }
+
+        function showImage(base64img, imgid, fileValId) {
+            var imgObj = document.getElementById(imgid);
+            if (typeof (imgObj) != "undefined") {
+                imgObj.setAttribute("src", imgResult);
+            }
+            var fileValObj = document.getElementById(fileValId);
+            if (typeof (fileValObj) != "undefined") {
+                fileValObj.setAttribute("value", imgResult);
+            }
         }
 
         $('#file').on('change', function () {
