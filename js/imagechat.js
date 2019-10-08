@@ -57,9 +57,12 @@ $(document).ready(function() {
                         console.log(res);
                         var myParent = document.getElementById("list"); 
                         var myImage = document.createElement("img");
+                        var infoText = document.createTextNode(res[i].createdAt);
                         var brDiv = document.createElement('br');
                         myImage.setAttribute("src", res.base64img);
                         myParent.appendChild(myImage);
+                        myParent.appendChild(brDiv);
+                        myParent.appendChild(infoText);
                         myParent.appendChild(brDiv);
                     }).catch(err => {
                         console.log(err);
