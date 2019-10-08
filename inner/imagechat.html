@@ -4,18 +4,19 @@
   <meta charset="UTF-8" http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>Image Chat</title>
   <link href="/image/ball.png" type="image/x-icon" rel="shortcut icon" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
   <link rel="stylesheet" href="/css/imgchat.css">
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <div class="sctp">
-    <img src="img/sczp.png" id="photo" alt="" />
-    <input class="iptsc" type="file" name="file" id="file" />
+    <input class="btn btn-primary" type="file" name="file" id="file" />
     <input type="hidden" id="fileVal">
+    <img src="" id="photo" alt="" />
 </div>
-<div class="buttons">
-    <button class="button" id="download">刷新</button>
+<div>
+    <button class="btn btn-primary" id="download">刷新</button>
 </div>
 <div id="list">
 
