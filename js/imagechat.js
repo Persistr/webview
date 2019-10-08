@@ -34,6 +34,8 @@ $(document).ready(function() {
             const query = Bmob.Query("images");
             query.find().then(res => {
                 console.log(res)
+                
+                
             });
         }
 
@@ -51,6 +53,10 @@ $(document).ready(function() {
         $('#file').on('change', function () {
             chooseImage('file', 'photo', 'fileVal');
         });
+
+        $('#download').on('click', function() {
+            downlaodImages();
+        })
     });
     
 });
