@@ -10,6 +10,7 @@ $(document).ready(function() {
             var reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = function (e) {
+                alert(reader.result);
                 var imgResult = e.target.result;
                 var imgObj = document.getElementById(imgid);
                 if (typeof (imgObj) != "undefined") {
