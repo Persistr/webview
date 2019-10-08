@@ -13,8 +13,23 @@ $(document).ready(function() {
             reader.readAsDataURL(file);
             //save base64 code 
             reader.onload = function (e) {
+
                 var imgResult = e.target.result;
-                saveImage(imgResult);
+
+
+                let canvas = document.createElement('canvas'), 
+                context = canvas.getContext('2d'),
+                imageWidth = image.width / 2,    //压缩后图片的大小
+                imageHeight = image.height / 2,
+                var data = ''
+
+                canvas.width = imageWidth
+                canvas.height = imageHeight
+
+                context.drawImage(image, 0, 0, imageWidth, imageHeight)
+                data = canvas.toDataURL('image/jpeg')
+
+                saveImage(data);
             };
         };
 
