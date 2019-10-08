@@ -1,4 +1,4 @@
-Bmob.initialize("b74ac2feaf9f7003", "4182b3d23204544c67ed307bcfa7318c");
+Bmob.initialize("b74ac2feaf9f7003", "888888");
 
 $(document).ready(function() {
     $(function () {
