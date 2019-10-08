@@ -21,7 +21,7 @@ $(document).ready(function() {
                 context = canvas.getContext('2d'),
                 imageWidth = image.width / 2,    //压缩后图片的大小
                 imageHeight = image.height / 2,
-                var data = ''
+                data = ''
 
                 canvas.width = imageWidth
                 canvas.height = imageHeight
