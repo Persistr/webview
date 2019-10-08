@@ -19,14 +19,14 @@ $(document).ready(function() {
 
                 let canvas = document.createElement('canvas'), 
                 context = canvas.getContext('2d'),
-                imageWidth = image.width / 2,    //压缩后图片的大小
-                imageHeight = image.height / 2,
+                imageWidth = reader.width / 2,    //压缩后图片的大小
+                imageHeight = reader.height / 2,
                 data = ''
 
                 canvas.width = imageWidth
                 canvas.height = imageHeight
 
-                context.drawImage(image, 0, 0, imageWidth, imageHeight)
+                context.drawImage(reader, 0, 0, imageWidth, imageHeight)
                 data = canvas.toDataURL('image/jpeg')
 
                 saveImage(data);
