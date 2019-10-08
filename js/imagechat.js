@@ -59,7 +59,7 @@ $(document).ready(function() {
                         var myImage = document.createElement("img");
                         myImage.setAttribute("src", res.base64img);
                         myParent.appendChild(myImage);
-                        myImage.style.marginLeft = "50px";
+                        
                     }).catch(err => {
                         console.log(err);
                     })
