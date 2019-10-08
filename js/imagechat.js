@@ -18,8 +18,8 @@ $(document).ready(function() {
                 image.onload = function() {
                     let canvas = document.createElement('canvas'), 
                     context = canvas.getContext('2d'),
-                    imageWidth = image.width / 2,    //压缩后图片的大小
-                    imageHeight = image.height / 2,
+                    imageWidth = image.width / 4,    //压缩后图片的大小
+                    imageHeight = image.height / 4,
                     data = ''
 
                     canvas.width = imageWidth
