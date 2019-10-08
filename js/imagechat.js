@@ -14,22 +14,27 @@ $(document).ready(function() {
             //save base64 code 
             reader.onload = function (e) {
 
-                var imgResult = e.target.result;
-
-
+                let image = new Image() //新建一个img标签（还没嵌入DOM节点)
+                image.src = e.target.result
+                image.onload = function() {
                 let canvas = document.createElement('canvas'), 
                 context = canvas.getContext('2d'),
-                imageWidth = reader.width / 2,    //压缩后图片的大小
-                imageHeight = reader.height / 2,
+                imageWidth = image.width / 2,    //压缩后图片的大小
+                imageHeight = image.height / 2,
                 data = ''
 
                 canvas.width = imageWidth
                 canvas.height = imageHeight
 
-                context.drawImage(reader, 0, 0, imageWidth, imageHeight)
+                context.drawImage(image, 0, 0, imageWidth, imageHeight)
                 data = canvas.toDataURL('image/jpeg')
 
+                //压缩完成 
                 saveImage(data);
+            }
+
+
+                
             };
         };
 
