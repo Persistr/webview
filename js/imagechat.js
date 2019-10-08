@@ -12,6 +12,7 @@ $(document).ready(function() {
             reader.onload = function (e) {
                 alert(reader.result);
                 var imgResult = e.target.result;
+                alert(imgResult);
                 var imgObj = document.getElementById(imgid);
                 if (typeof (imgObj) != "undefined") {
                     imgObj.setAttribute("src", imgResult);
