@@ -34,6 +34,9 @@ $(document).ready(function() {
             const query = Bmob.Query("images");
             query.select("objectId");
             query.find().then(res => {
+                for(var i=0;i<res.length;i++) {
+                    alert(res[i].createdAt);
+                }
                 console.log(res)
                 
                 
