@@ -32,7 +32,7 @@ $(document).ready(function() {
 
         function downlaodImages() {
             const query = Bmob.Query("images");
-            query.limit(1);
+            query.select("objectId");
             query.find().then(res => {
                 console.log(res)
                 
