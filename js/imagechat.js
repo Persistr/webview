@@ -35,9 +35,15 @@ $(document).ready(function() {
             query.select("objectId");
             query.find().then(res => {
                 for(var i=0;i<res.length;i++) {
-                    alert(res[i].createdAt);
+                    const inner = Bmob.Query('tableName');
+                    inner.get(res[i].objectId).then(res => {
+                        console.log(res);
+                        showImage(res.base64img);
+                    }).catch(err => {
+                        console.log(err);
+                    })
                 }
-                console.log(res)
+                console.log(res);
                 
                 
             });
