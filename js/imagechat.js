@@ -57,7 +57,7 @@ $(document).ready(function() {
                         console.log(res);
                         var myParent = document.getElementById("list"); 
                         var myImage = document.createElement("img");
-                        var infoText = document.createTextNode(res[i].createdAt);
+                        var infoText = document.createTextNode(res.createdAt);
                         var brDiv = document.createElement('br');
                         myImage.setAttribute("src", res.base64img);
                         myParent.appendChild(myImage);
