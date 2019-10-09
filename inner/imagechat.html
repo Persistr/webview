@@ -12,7 +12,7 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div>
+<div class="line">
     <img src="/image/in-low.png" />
 </div>
 
@@ -22,7 +22,7 @@
     <!-- <img src="" id="photo" alt="" /> -->
 </div>
 
-<div>
+<div class="line">
   <p>压缩倍率</p>
     <select id="small" name="small" class="simple">
       <option value="2">Small 2</option>
@@ -32,16 +32,16 @@
     </select>
 </div>
 
-<div>
+<div class="line">
   <button class="btn btn-primary" id="download">刷新</button>
   <button class="btn btn-primary" id="delete">清除</button>
 </div>
 
-<div>
+<div class="line">
   <div id="list"></div>
 </div>
 
-<div class="footer"> by <a href="#">miles</a> from github.</div>
+<div class="line"> by <a href="#">miles</a> from github.</div>
     
     
     
@@ -54,9 +54,9 @@
 <script  src="/js/imagechat.js"></script>
 <script>
     $.alert({
-                    title: 'Alert!',
-                    content: 'Simple alert!',
-                });
+      title: 'Alert!',
+      content: 'Simple alert!',
+    });
 </script>
 </body>
 </html>
