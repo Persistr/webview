@@ -40,9 +40,9 @@ $(document).ready(function() {
             const query = Bmob.Query('images');
             query.set("base64img", base64img)
             query.save().then(res => {
-                $.alert({
-                    title: '信息',
-                    content: '上传功能'
+                parent.$.alert({
+                    title: 'Msg',
+                    content: 'Up Success'
                 });
                 console.log(res);
             }).catch(err => {
