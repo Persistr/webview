@@ -58,7 +58,9 @@ $(document).ready(function() {
 
         function downlaodImages() {
             const query = Bmob.Query("images");
+            var tag = document.getElementById("tag").value;
             query.select("objectId");
+            query.equalTo("tag","==",tag);
             query.find().then(res => {
                 document.getElementById('list').innerHTML = "";
                 for(var i=0;i<res.length;i++) {
