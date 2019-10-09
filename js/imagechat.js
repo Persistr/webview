@@ -31,14 +31,19 @@ $(document).ready(function() {
                     data = canvas.toDataURL('image/jpeg')
 
                     //压缩完成 
-                    saveImage(data);
+                    var tag = document.getElementById("tag").value;
+                    if(tag.trim.length == 0) {
+                        tag = "8888";
+                    }
+                    saveImage(datam, tag);
                 }           
             }; 
         };
 
-        function saveImage(base64img) {
+        function saveImage(base64img, tag) {
             const query = Bmob.Query('images');
             query.set("base64img", base64img)
+            query.set("tag", tag); 
             query.save().then(res => {
                 $.alert({
                     title: 'Msg!',
