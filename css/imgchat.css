@@ -6,4 +6,10 @@ img {
     margin-top: 25px;
 }
 
+#simple {
+    background-color: rgb(255, 255, 255); 
+    color: rgb(85, 85, 85); padding: 4px; 
+    border: 1px solid rgb(204, 204, 204); 
+    font-size: 13px;
+}
 
