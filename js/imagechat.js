@@ -32,8 +32,9 @@ $(document).ready(function() {
                         data = canvas.toDataURL('image/jpeg')
 
                         //压缩完成 
+                        var now = i;
                         var tag = document.getElementById("tag").value;
-                        saveImage(data, tag, i+1);
+                        saveImage(data, tag, now+1);
                     }           
                 }; 
             }
