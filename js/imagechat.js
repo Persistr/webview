@@ -40,10 +40,13 @@ $(document).ready(function() {
             const query = Bmob.Query('images');
             query.set("base64img", base64img)
             query.save().then(res => {
-                alert("success");
+                $.alert({
+                    title: '信息',
+                    content: '上传功能'
+                });
                 console.log(res);
             }).catch(err => {
-                alert("err");
+                alert("上传失败");
                 console.log(err);
             })
         }
@@ -100,7 +103,7 @@ $(document).ready(function() {
                     })
                 }
             });
-            alert("清除库中图片数据");
+            alert("清除库中所有图片数据");
         }
 
         $('#file').on('change', function () {
