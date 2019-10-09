@@ -52,6 +52,7 @@ $(document).ready(function() {
                     content: 'Up img success!',
                 });
                 console.log(res);
+                updateNums();
             }).catch(err => {
                 $.alert({
                     title: 'Msg!',
@@ -59,6 +60,7 @@ $(document).ready(function() {
                 });
                 console.log(err);
             })
+            
         }
 
         function downlaodImages() {
@@ -120,9 +122,18 @@ $(document).ready(function() {
                 title: 'Msg!',
                 content: 'Delete all imgs in table!',
             });
+            updateNums();
         }
 
-        
+        function updateNums() {
+            const query = Bmob.Query("images");
+            query.select("objectId");
+            query.find().then(res => {
+                document.getElementById('nums').innerText = "库中共有图片"+res.length+"张";
+            });
+        }
+
+        updateNums();
 
         $('#file').on('change', function () {
             chooseImage('file', 'photo', 'fileVal');
