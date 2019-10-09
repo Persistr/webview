@@ -32,9 +32,9 @@ $(document).ready(function() {
                         data = canvas.toDataURL('image/jpeg')
 
                         //压缩完成 
-                        var now = i;
+
                         var tag = document.getElementById("tag").value;
-                        saveImage(data, tag, now+1);
+                        saveImage(data, tag, file.name);
                     }           
                 }; 
             }
@@ -42,19 +42,20 @@ $(document).ready(function() {
         };
 
         function saveImage(base64img, tag, id) {
+            var innerId = id;
             const query = Bmob.Query('images');
             query.set("base64img", base64img)
             query.set("tag", tag); 
             query.save().then(res => {
                 $.alert({
                     title: 'Msg!',
-                    content: 'Up ' + id +' img success!',
+                    content: 'Up ' + innerId +' img success!',
                 });
                 console.log(res);
             }).catch(err => {
                 $.alert({
                     title: 'Msg!',
-                    content: 'Up ' + id +' img failed!',
+                    content: 'Up ' + innerId +' img failed!',
                 });
                 console.log(err);
             })
