@@ -13,35 +13,38 @@
 <body>
 <!-- partial:index.partial.html -->
 <div class="line">
-    <img src="/image/in-low.png" />
+    <div class="line">
+        <img src="/image/in-low.png" />
+    </div>
+    
+    <div class="center">
+        <input type="file" name="file" id="file" class="simple center"/>
+        <input type="hidden" id="fileVal">
+        <!-- <img src="" id="photo" alt="" /> -->
+    </div>
+    
+    <div class="line">
+      <p>压缩倍率</p>
+        <select id="small" name="small" class="simple">
+          <option value="2">Small 2</option>
+          <option value="3" disabled selected value>Small 3</option>
+          <option value="4">Small 4</option>
+          <option value="6">Small 6</option>
+        </select>
+    </div>
+    
+    <div class="line">
+      <button class="btn btn-primary" id="download">刷新</button>
+      <button class="btn btn-primary" id="delete">清除</button>
+    </div>
+    
+    <div class="line">
+      <div id="list"></div>
+    </div>
+    
+    <div class="line"> by <a href="#">miles</a> from github.</div>
 </div>
 
-<div class="center">
-    <input type="file" name="file" id="file" class="simple center"/>
-    <input type="hidden" id="fileVal">
-    <!-- <img src="" id="photo" alt="" /> -->
-</div>
-
-<div class="line">
-  <p>压缩倍率</p>
-    <select id="small" name="small" class="simple">
-      <option value="2">Small 2</option>
-      <option value="3" disabled selected value>Small 3</option>
-      <option value="4">Small 4</option>
-      <option value="6">Small 6</option>
-    </select>
-</div>
-
-<div class="line">
-  <button class="btn btn-primary" id="download">刷新</button>
-  <button class="btn btn-primary" id="delete">清除</button>
-</div>
-
-<div class="line">
-  <div id="list"></div>
-</div>
-
-<div class="line"> by <a href="#">miles</a> from github.</div>
     
     
     
@@ -52,11 +55,6 @@
 <script src='/lib/Bmob-2.2.1.min.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 <script  src="/js/imagechat.js"></script>
-<script>
-    $.alert({
-      title: 'Alert!',
-      content: 'Simple alert!',
-    });
-</script>
+
 </body>
 </html>

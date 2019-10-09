@@ -40,10 +40,16 @@ $(document).ready(function() {
             const query = Bmob.Query('images');
             query.set("base64img", base64img)
             query.save().then(res => {
-                
+                $.alert({
+                    title: 'Msg!',
+                    content: 'Up success!',
+                });
                 console.log(res);
             }).catch(err => {
-                alert("上传失败");
+                $.alert({
+                    title: 'Msg!',
+                    content: 'Up falied!',
+                });
                 console.log(err);
             })
         }
@@ -100,7 +106,10 @@ $(document).ready(function() {
                     })
                 }
             });
-            alert("清除库中所有图片数据");
+            $.alert({
+                title: 'Msg!',
+                content: 'Delete all imgs in table!',
+            });
         }
 
         
