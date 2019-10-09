@@ -12,6 +12,8 @@ $(document).ready(function() {
             var reader = new FileReader();
             reader.readAsDataURL(file);
             //save base64 code 
+            var smaller = document.getElementById("small").value;
+            alert(smaller);
             reader.onload = function (e) {
                 let image = new Image() //新建一个img标签（还没嵌入DOM节点)
                 image.src = e.target.result
