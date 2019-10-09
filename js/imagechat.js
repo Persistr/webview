@@ -8,33 +8,36 @@ $(document).ready(function() {
                  console.log('file ' + fileid + ' not exists');
                  return;
             }
-            var file = fileObj.files[0];
-            var reader = new FileReader();
-            reader.readAsDataURL(file);
-            //save base64 code 
-            var smaller = document.getElementById("small").value;
+            for(var i=0;i<file.length;i++) {
+                var file = fileObj.files[0];
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                //save base64 code 
+                var smaller = document.getElementById("small").value;
+                
+                reader.onload = function (e) {
+                    let image = new Image() //新建一个img标签（还没嵌入DOM节点)
+                    image.src = e.target.result
+                    image.onload = function() {
+                        let canvas = document.createElement('canvas'), 
+                        context = canvas.getContext('2d'),
+                        imageWidth = image.width / smaller,    //压缩后图片的大小
+                        imageHeight = image.height / smaller,
+                        data = ''
+
+                        canvas.width = imageWidth
+                        canvas.height = imageHeight
+
+                        context.drawImage(image, 0, 0, imageWidth, imageHeight)
+                        data = canvas.toDataURL('image/jpeg')
+
+                        //压缩完成 
+                        var tag = document.getElementById("tag").value;
+                        saveImage(data, tag);
+                    }           
+                }; 
+            }
             
-            reader.onload = function (e) {
-                let image = new Image() //新建一个img标签（还没嵌入DOM节点)
-                image.src = e.target.result
-                image.onload = function() {
-                    let canvas = document.createElement('canvas'), 
-                    context = canvas.getContext('2d'),
-                    imageWidth = image.width / smaller,    //压缩后图片的大小
-                    imageHeight = image.height / smaller,
-                    data = ''
-
-                    canvas.width = imageWidth
-                    canvas.height = imageHeight
-
-                    context.drawImage(image, 0, 0, imageWidth, imageHeight)
-                    data = canvas.toDataURL('image/jpeg')
-
-                    //压缩完成 
-                    var tag = document.getElementById("tag").value;
-                    saveImage(data, tag);
-                }           
-            }; 
         };
 
         function saveImage(base64img, tag) {
