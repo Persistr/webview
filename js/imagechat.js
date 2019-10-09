@@ -107,6 +107,17 @@ $(document).ready(function() {
             alert("清除库中所有图片数据");
         }
 
+        $(function(){
+            $("#download").bind("click",function(){
+                $.alert(
+                    {
+                        title : "提示信息",
+                        content: "你点击了提交按钮"
+                    }
+                );
+            })
+        });
+
         $('#file').on('change', function () {
             chooseImage('file', 'photo', 'fileVal');
         });
