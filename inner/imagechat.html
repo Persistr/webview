@@ -11,13 +11,23 @@
 <body>
 <!-- partial:index.partial.html -->
 <div class="sctp">
-    <input type="file" name="file" id="file" />
-    <input type="hidden" id="fileVal">
-    <img src="" id="photo" alt="" />
+  <input type="file" name="file" id="file" />
+  <input type="hidden" id="fileVal">
+  <!-- <img src="" id="photo" alt="" /> -->
 </div>
 <div>
-    <button class="btn btn-primary" id="download">刷新</button>
-    <button class="btn btn-primary" id="download">清除</button>
+  <p>压缩倍率</p>
+  <select id="small" name="small">
+    <option disabled selected value>选择一个...</option>
+    <option value="challenges">2</option>
+    <option value="projects">4</option>
+    <option value="community">6</option>
+    <option value="openSource">8</option>
+  </select>
+</div>
+<div>
+  <button class="btn btn-primary" id="download">刷新</button>
+  <button class="btn btn-primary" id="">清除</button>
 </div>
 <div id="list">
 
