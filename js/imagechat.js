@@ -63,7 +63,7 @@ $(document).ready(function() {
             query.equalTo("tag","==",tag);
             query.find().then(res => {
                 document.getElementById('list').innerHTML = "";
-                document.getElementById('msg').innerText("加载图片"+res.length+"张");
+                document.getElementById('msg').innerText = "加载图片"+res.length+"张";
                 for(var i=0;i<res.length;i++) {
                     const inner = Bmob.Query('images');
                     inner.get(res[i].objectId).then(res => {
