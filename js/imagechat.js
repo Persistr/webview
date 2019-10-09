@@ -63,13 +63,14 @@ $(document).ready(function() {
             query.equalTo("tag","==",tag);
             query.find().then(res => {
                 document.getElementById('list').innerHTML = "";
+                document.getElementById('msg').innerText("加载图片"+res.length+"张");
                 for(var i=0;i<res.length;i++) {
                     const inner = Bmob.Query('images');
                     inner.get(res[i].objectId).then(res => {
                         console.log(res);
                         var myParent = document.getElementById("list"); 
                         var myImage = document.createElement("img");
-                        var infoText = document.createTextNode(res.createdAt);
+                        //var infoText = document.createTextNode(res.createdAt);
                         var brDiv = document.createElement('br');
                         myImage.setAttribute("src", res.base64img);
                         myParent.appendChild(myImage);
