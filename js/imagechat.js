@@ -32,10 +32,11 @@ $(document).ready(function() {
 
                     //压缩完成 
                     var tag = document.getElementById("tag").value;
+                    alert(tag);
                     if(tag.trim.length == 0) {
                         tag = "8888";
                     }
-                    saveImage(datam, tag);
+                    saveImage(data, tag);
                 }           
             }; 
         };
