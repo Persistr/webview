@@ -34,28 +34,28 @@ $(document).ready(function() {
                         //压缩完成 
 
                         var tag = document.getElementById("tag").value;
-                        saveImage(data, tag, file.name);
+                        saveImage(data, tag);
                     }           
                 }; 
             }
             
         };
 
-        function saveImage(base64img, tag, id) {
-            var innerId = id;
+        function saveImage(base64img, tag) {
+            //var innerId = id;
             const query = Bmob.Query('images');
             query.set("base64img", base64img)
             query.set("tag", tag); 
             query.save().then(res => {
                 $.alert({
                     title: 'Msg!',
-                    content: 'Up ' + innerId +' img success!',
+                    content: 'Up img success!',
                 });
                 console.log(res);
             }).catch(err => {
                 $.alert({
                     title: 'Msg!',
-                    content: 'Up ' + innerId +' img failed!',
+                    content: 'Up img failed!',
                 });
                 console.log(err);
             })
