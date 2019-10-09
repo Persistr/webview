@@ -9,7 +9,7 @@ $(document).ready(function() {
                  return;
             }
             for(var i=0;i<fileObj.files.length;i++) {
-                var file = fileObj.files[0];
+                var file = fileObj.files[i];
                 var reader = new FileReader();
                 reader.readAsDataURL(file);
                 //save base64 code 
