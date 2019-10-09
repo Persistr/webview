@@ -113,6 +113,7 @@ $(document).ready(function() {
                     const query = Bmob.Query('images');
                     query.destroy(res[i].objectId).then(res => {
                         console.log(res)
+                        updateNums();
                     }).catch(err => {
                         console.log(err)
                     })
@@ -122,7 +123,7 @@ $(document).ready(function() {
                 title: 'Msg!',
                 content: 'Delete all imgs in table!',
             });
-            updateNums();
+            
         }
 
         function updateNums() {
