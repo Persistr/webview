@@ -33,27 +33,27 @@ $(document).ready(function() {
 
                         //压缩完成 
                         var tag = document.getElementById("tag").value;
-                        saveImage(data, tag);
+                        saveImage(data, tag, i+1);
                     }           
                 }; 
             }
             
         };
 
-        function saveImage(base64img, tag) {
+        function saveImage(base64img, tag, id) {
             const query = Bmob.Query('images');
             query.set("base64img", base64img)
             query.set("tag", tag); 
             query.save().then(res => {
                 $.alert({
                     title: 'Msg!',
-                    content: 'Up success!',
+                    content: 'Up ' + id +' img success!',
                 });
                 console.log(res);
             }).catch(err => {
                 $.alert({
                     title: 'Msg!',
-                    content: 'Up falied!',
+                    content: 'Up ' + id +' img failed!',
                 });
                 console.log(err);
             })
