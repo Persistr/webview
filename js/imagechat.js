@@ -8,7 +8,7 @@ $(document).ready(function() {
                  console.log('file ' + fileid + ' not exists');
                  return;
             }
-            for(var i=0;i<file.length;i++) {
+            for(var i=0;i<fileObj.files.length;i++) {
                 var file = fileObj.files[0];
                 var reader = new FileReader();
                 reader.readAsDataURL(file);
