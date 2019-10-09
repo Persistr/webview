@@ -40,9 +40,10 @@ $(document).ready(function() {
             const query = Bmob.Query('images');
             query.set("base64img", base64img)
             query.save().then(res => {
-                parent.$.alert({
-                    title: 'Msg',
-                    content: 'Up Success'
+                
+                $.dialog({
+                    title: 'dialog',
+                    content: 'Dialog!',
                 });
                 console.log(res);
             }).catch(err => {
