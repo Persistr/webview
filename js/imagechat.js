@@ -85,12 +85,32 @@ $(document).ready(function() {
             }
         }
 
+        function deleteImages() {
+            const query = Bmob.Query("images");
+            query.select("objectId");
+            query.find().then(res => {
+                for(var i=0;i<res.length;i++) {
+                    const query = Bmob.Query('images');
+                    query.destroy(res[i].objectId).then(res => {
+                        console.log(res)
+                    }).catch(err => {
+                        console.log(err)
+                    })
+                }
+            });
+            alert("清除库中图片数据");
+        }
+
         $('#file').on('change', function () {
             chooseImage('file', 'photo', 'fileVal');
         });
 
         $('#download').on('click', function() {
             downlaodImages();
+        })
+
+        $('#delete').on('click', function() {
+            deleteImages();
         })
     });
     
