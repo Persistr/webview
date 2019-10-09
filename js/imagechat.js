@@ -13,15 +13,15 @@ $(document).ready(function() {
             reader.readAsDataURL(file);
             //save base64 code 
             var smaller = document.getElementById("small").value;
-            alert(smaller);
+            
             reader.onload = function (e) {
                 let image = new Image() //新建一个img标签（还没嵌入DOM节点)
                 image.src = e.target.result
                 image.onload = function() {
                     let canvas = document.createElement('canvas'), 
                     context = canvas.getContext('2d'),
-                    imageWidth = image.width / 3,    //压缩后图片的大小
-                    imageHeight = image.height / 3,
+                    imageWidth = image.width / smaller,    //压缩后图片的大小
+                    imageHeight = image.height / smaller,
                     data = ''
 
                     canvas.width = imageWidth
