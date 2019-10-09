@@ -40,10 +40,7 @@ $(document).ready(function() {
             const query = Bmob.Query('images');
             query.set("base64img", base64img)
             query.save().then(res => {
-                $.alert({
-                    title: 'Alert!',
-                    content: 'Simple alert!',
-                });
+                
                 console.log(res);
             }).catch(err => {
                 alert("上传失败");
