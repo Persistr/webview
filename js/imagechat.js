@@ -33,17 +33,16 @@ $(document).ready(function() {
                     //压缩完成 
                     saveImage(data);
                 }           
-            };
+            }; 
         };
 
         function saveImage(base64img) {
             const query = Bmob.Query('images');
             query.set("base64img", base64img)
             query.save().then(res => {
-                
-                $.dialog({
-                    title: 'dialog',
-                    content: 'Dialog!',
+                $.alert({
+                    title: 'Alert!',
+                    content: 'Simple alert!',
                 });
                 console.log(res);
             }).catch(err => {
