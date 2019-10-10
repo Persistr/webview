@@ -26,11 +26,34 @@ $(document).ready(function() {
             });
             
         }
-        //随机加载对应等级的怪物
+        var mList = []
+        //随机加载对应等级的怪物的数据
+        function loadMonster(rank) {
+            const query = Bmob.Query("Monster");
+            query.equalTo("rank","<=",rank);
+            query.find().then(res => {
+                mList = res;
+                console.log(res);
+            });
+        }
+        //通过存储的怪物数据刷新怪物列表
+        function updateList() {
+            var nums = mList.length;
+            document.getElementById('m1').innerText = mList[0%nums].name;
+            document.getElementById('m2').innerText = mList[1%nums].name;
+            document.getElementById('m3').innerText = mList[2%nums].name;
+            document.getElementById('m4').innerText = mList[3%nums].name;
+            document.getElementById('m5').innerText = mList[4%nums].name;
+        }
+
+
 
         //挂机模块
 
-
+        $('#fight').on('click', function() {
+            loadMonster(1);
+            updateList();
+        })
         $('#read').on('click', function() {
             readInfo();
         })
