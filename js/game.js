@@ -30,9 +30,10 @@ $(document).ready(function() {
         //随机加载对应等级的怪物的数据
         function loadMonster(rank) {
             const query = Bmob.Query("Monster");
-            query.equalTo("rank","<=",rank);
+            query.equalTo("rank","==",rank);
             query.find().then(res => {
                 mList = res;
+                updateList();
                 console.log(res);
             });
         }
@@ -51,8 +52,8 @@ $(document).ready(function() {
         //挂机模块
 
         $('#fight').on('click', function() {
-            loadMonster(1);
-            updateList();
+            loadMonster("1");
+            //updateList();
         })
         $('#read').on('click', function() {
             readInfo();
