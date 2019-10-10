@@ -9,7 +9,7 @@ $(document).ready(function() {
             query.equalTo("ID","==",id);
             query.find().then(res => {
                 //更新数据
-                
+                document.getElementById('name').innerText = '姓名' + res.name;
                 console.log(res);
             });
             
