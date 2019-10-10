@@ -39,6 +39,9 @@ $(document).ready(function() {
         }
         //通过存储的怪物数据刷新怪物列表
         function updateList() {
+            mList = mList.sort(function(){
+                return 0.5 - Math.random();
+            });
             var nums = mList.length;
             document.getElementById('m1').innerText = mList[0%nums].name;
             document.getElementById('m2').innerText = mList[1%nums].name;
