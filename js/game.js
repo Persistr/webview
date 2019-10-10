@@ -18,7 +18,7 @@ $(document).ready(function() {
                 }else {
                     $.alert({
                         title: 'Msg!',
-                        content: '没有该账户信息!',
+                        content: '没有角色信息!',
                     });
                 }
                 
@@ -26,7 +26,9 @@ $(document).ready(function() {
             });
             
         }
+        //随机加载对应等级的怪物
 
+        //挂机模块
 
 
         $('#read').on('click', function() {
