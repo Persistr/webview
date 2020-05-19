@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $(function(){
         window.onload = function() {
-
+            clic()
         }
         function clic(){
             for(var i=0;i<5;i++) {
