@@ -5,12 +5,12 @@ $(document).ready(function() {
         }
         function clic(){
             for(var i=0;i<5;i++) {
-                document.getElementById("content").innerHTML += "</br><input name=\"按钮\" type=\"button\" onClick=\"buttonClick()\" value=\"按钮\"><\/input>";
+                document.getElementById("content").innerHTML += "</br><input name=\"按钮\" type=\"button\" onClick=\"a()\" value=\"按钮\"><\/input>";
             }
             
         }
 
-        function buttonClick() {
+        function a() {
             alert('HAHAHA')
         }
     })
