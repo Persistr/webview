@@ -69,19 +69,19 @@
     })
 
 
-    function getJkm(cardNo) {
-        var datas = '';
-        $.ajax({
-            type : "GET",
-            url : "http://www.xwryjx.zjut.edu.cn/PassCode/jkm3?account=15868816812&cardNo=15868816812&identity=校外人员",
-            async : false,
-            dataType:'json',
-            success : function(data) {
-                datas=data;
-            }
-        });
-        return datas;
-    }
+    // function getJkm(cardNo) {
+    //     var datas = '';
+    //     $.ajax({
+    //         type : "GET",
+    //         url : "http://www.xwryjx.zjut.edu.cn/PassCode/jkm3?account=15868816812&cardNo=15868816812&identity=校外人员",
+    //         async : false,
+    //         dataType:'json',
+    //         success : function(data) {
+    //             datas=data;
+    //         }
+    //     });
+    //     return datas;
+    // }
     //获取系统时间
     function showTime() {
         nowtime = new Date();
