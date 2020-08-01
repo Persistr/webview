@@ -58,7 +58,7 @@
             width: 180,
             height: 180,
             //text	: "http://baidu.com",
-            text	: '1jovrLqqbiBSYY45er9fRg==',
+            text	: 'Only provide learning use, do not use the website for illegal activities, otherwise this site will not be responsible',
             //text	: "/PassCode/information?account=15868816812&token=05d1ca00-b67c-4cb2-8cc6-664e37b953ca",
             render: "canvas", //也可以替换为table
             //foreground: "#1E90FF",
@@ -83,6 +83,7 @@
     //     return datas;
     // }
     //获取系统时间
+
     function showTime() {
         nowtime = new Date();
         year = nowtime.getFullYear();//年
@@ -100,6 +101,16 @@
     //月日时分秒小于10补0
     function p(s) {
         return s < 10 ? '0' + s : s;
+    }
+
+    function setToday() {
+        nowtime = new Date();
+        year = nowtime.getFullYear();//年
+        month = nowtime.getMonth() + 1;//月
+        day = nowtime.getDate();//日
+
+        document.getElementById("today_time").innerText = '有效时间至：' + year + '-'+ month + '-' + day +  ' 23:59:59'
+
     }
 
 </script></head>
@@ -134,7 +145,7 @@
     </div>
 
     
-        <div class="time">有效时间至：2020-08-02 23:59:59</div>
+        <div class="time" id="today_time">有效时间至：2020-08-02 23:59:59</div>
     
     <div id="hzjkm"></div>
 
