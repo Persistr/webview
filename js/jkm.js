@@ -112,10 +112,15 @@ function getQueryVariable() {
     for (var i=0;i<vars.length;i++) {
             var pair = vars[i].split("=");
             if(pair[0] == 'name'){
-                name = pair[1];
+                if(pair[1].length > 0){
+                    name = pair[1];
+                }
+                
             }
             if(pair[0] == 'place'){
-                place = pair[1];
+                if(pair[1].length > 0) {
+                    place = pair[1];
+                }
             }
             
     }
