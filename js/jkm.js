@@ -106,7 +106,7 @@ function setToday() {
 function getQueryVariable() {
     var name = '田野';
     var place = '计算机科学与技术学院、软件学院';
-    var query = encodeURIComponent(window.location.search.substring(1)) ;
+    var query = (window.location.search.substring(1)) ;
     alert(query)
     var vars = query.split("&");
     for (var i=0;i<vars.length;i++) {
