@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>生成向导</title>
+  <link href="/image/ball.png" type="image/x-icon" rel="shortcut icon" />
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="jumbotron">
+      <label for="name"><input id="name" type="text" placeholder="请输入姓名(例如：田野)"></label></label>
+      <label for="place"><input id="place" type="text" placeholder="请输入接访单位(例如:人文学院)"></label></label>
+      <button id="go">生成通行证</button>
+  </div>
+</div>
+<!-- partial -->
+<script>
+    document.getElementById('go').onclick = function() {
+        var name = document.getElementById('name').val;
+        var place = document.getElementById('place').val;
+        window.location.href = 'jkm.html/id=' + name + '&place=' + place;
+    }
+</script>
+</body>
+</html>

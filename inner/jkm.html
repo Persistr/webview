@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="/css/jkm.css">
     <script src="/lib/jquery-1.7.2.min.js">
-    </script><script type="text/javascript" src="/lib/jquery.qrcode.min.js"></script><script>
+    </script><script type="text/javascript" src="/lib/jquery.qrcode.min.js">
+    </script><script>
     jQuery(function(){
         var cardNo = 'phonenumber';
         var colour = '1388CB';
@@ -13,8 +14,6 @@
         if(null == colour || "" == colour){
             colour = "#CCCCCC";
         }
-
-
         var mzt='';
         var dateTime='';
         //var array=getJkm(cardNo);
@@ -109,50 +108,49 @@
         month = nowtime.getMonth() + 1;//月
         day = nowtime.getDate();//日
 
-        document.getElementById("today_time").innerText = '有效时间至：' + year + '-'+ month + '-' + day +  ' 23:59:59'
+        document.getElementById("today_time").innerText = '有效时间至：' + p(year) + '-'+ p(month) + '-' + p(day) +  ' 23:59:59'
 
     }
 
-</script></head>
+    function getQueryVariable() {
+        var name = '田野';
+        var place = '计算机科学与技术学院、软件学院';
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+                var pair = vars[i].split("=");
+                if(pair[0] == 'name'){
+                    return pair[1];
+                }
+                if(pair[0] == 'place'){
+                    return pair[1];
+                }
+                
+        }
+        document.getElementById("today_time").innerText = name + '通行码';
+        document.getElementById("place").innerText = '接访单位：' + place;
+    }
 
+    
 
-
-
-
+</script>
+</head>
 <body class="sjtu-xw-bg">
-
 <div class="banner-sjtu"></div>
 <div class="content-box">
-
     <div class="top-title">
-        <h3>田野通行码</h3>
-        
-        
+        <h3 id="name">田野通行码</h3>
             <span class="bgr">校外人员</span>
-        
     </div>
-    
-        <div class="time">接访单位：计算机科学与技术学院、软件学院</div>
-    
-
-    
-        <strong><div class="time2" id="div_timer">2020-08-01 16:28:53</div></strong>
-    
+    <div class="time" id="place">接访单位：计算机科学与技术学院、软件学院</div>
+    <strong><div class="time2" id="div_timer">2020-08-01 16:28:53</div></strong>
     <div class="qr">
-        
-            <div id="output"></div>
-        
+        <div id="output"></div>
     </div>
-
-    
-        <div class="time" id="today_time">有效时间至：2020-08-02 23:59:59</div>
-    
+    <div class="time" id="today_time">有效时间至：2020-08-02 23:59:59</div>
     <div id="hzjkm"></div>
-
-
     <div id="dateTime"></div>
-    <p class="tip" style="margin-top: 10px;">凭此码、杭州健康绿码、有效证件并测温进校。<br>适用范围：朝晖校区、屏峰校区、莫干山校区，<br>请主动出示，配合检查。
-    </p>
+    <p class="tip" style="margin-top: 10px;">凭此码、杭州健康绿码、有效证件并测温进校。<br>适用范围：朝晖校区、屏峰校区、莫干山校区，<br>请主动出示，配合检查。</p>
 </div>
 <!--
 <div class="bottom-tip">
@@ -161,5 +159,5 @@
     <h3>技术支持：0571-87951669</h3>
 </div>
 -->
-
-</body></html>
+</body>
+</html>
