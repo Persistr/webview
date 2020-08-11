@@ -32,11 +32,31 @@
   </div>
 </div>
 <!-- partial -->
+<script src="/lib/jquery-1.7.2.min.js"></script>
 <script>
     document.getElementById('go').onclick = function() {
         var name = document.getElementById('name').value;
         var place = document.getElementById('place').value;
-        window.location.href = encodeURI('jkm.html?name=' + name + '&place=' + place);
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {
+          // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+          xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {
+          // IE6, IE5 浏览器执行代码
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+          {
+            window.location.href = encodeURI('jkm.html?name=' + name + '&place=' + place);
+          }
+        }
+        xmlhttp.open("POST","http://49.234.211.93:8084/jkm/add?name=" + name + "&place=" + place,true);
+        xmlhttp.send();        
     }
 </script>
 </body>
